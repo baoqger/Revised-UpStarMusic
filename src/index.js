@@ -9,7 +9,10 @@ import '../style/materialize.css';
 import '../style/react-range.css';
 import '../style/style.css';
 
-console.log('xxxxxxxyy');
+if (process.env.NODE_ENV !== 'production') {
+  const {whyDidYouUpdate} = require('why-did-you-update')
+  whyDidYouUpdate(React)
+}
 
 const App = () => {
   const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router';
 const db = require('../../database/queries/db');
 
-class Header extends Component {
+class Header extends PureComponent {
   constructor(props) {
     super(props);
 
