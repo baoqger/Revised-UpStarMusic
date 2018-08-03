@@ -4,6 +4,8 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import Paginator from './Paginator';
 import * as actions from '../../actions';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 class ArtistIndex extends Component {
   onChange(_id) {
@@ -29,7 +31,12 @@ class ArtistIndex extends Component {
           />
           <label htmlFor={_id} />
         </div>
-        <img src={artist.image} className="circle" />
+        {/*<img src={artist.image} className="circle" />*/}
+        <LazyLoadImage
+          src={artist.image}
+          height={42}
+          width={42}
+          className="circle" />
         <div>
           <span className="title">
             <strong>{artist.name}</strong>
